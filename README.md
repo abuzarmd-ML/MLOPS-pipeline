@@ -55,6 +55,23 @@ you will find the 1 more file after this step whose extension is .dvc (winequali
 
   `git add . && git commit -m "update Readme.md"`
 
-8. 
+## write scripts and utilities
+Perform below steps:
 
+1. I have written `src/get_data.py` for uploading params file.
 
+2. I have written `src/load_data.py` for preprocessing the dataset, like renaming column.
+   processed dataset are saved in: `data/raw/winequality.csv`
+
+3. write steps of pipeline execution in dvc.yaml file.
+
+4. run below command to execute the pipeline:
+`dvc repro`
+
+5. I have written `src/split_data.py` to split the data set into train and test
+   
+   I have also added this step in `dvc.yaml`
+   
+   run: `dvc repro`
+  
+   push the changes to the github repo.
