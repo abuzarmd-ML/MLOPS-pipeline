@@ -27,7 +27,11 @@ Insted of making a project directory manually. use `template.py`
 `python3 template.py`
 
 ## Perform the below steps in order to version control the data and code.
-1. Download the dataset from the folder: `data_given/` or from kaggle.
+1. Download the dataset from:
+ https://drive.google.com/file/d/1bJjVZ8eju8qu-JYzr_wOOL7DJa2RqZvk/view?usp=share_link 
+
+or from kaggle.
+
 2. Make directory  `mkdir data_given` and paste the dataset inside it.
 3. Initialize the git repo 
 `git init`
@@ -52,3 +56,5 @@ you will find the 1 more file after this step whose extension is .dvc (winequali
   `git add . && git commit -m "update Readme.md"`
 
 8. 
+
+
