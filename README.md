@@ -55,7 +55,7 @@ you will find the 1 more file after this step whose extension is .dvc (winequali
 
   `git add . && git commit -m "update Readme.md"`
 
-## write scripts and utilities
+## write scripts and utilities for Training
 Perform below steps:
 
 1. I have written `src/get_data.py` for uploading params file.
@@ -90,3 +90,44 @@ Perform below steps:
    run: `dvc metrics show` . It will give scores and param mapping
    
    run: `dvc metrics diff` . It will give difference of previous and current result
+
+## Add Test Cases for project
+
+1. Tox is a tool that creates virtual environments, and installs the configured dependencies for those environments, for the purpose of testing a Python package.
+  
+   Install tox:
+    ```bash
+      pip install tox
+    ```
+2. create a directory where we will write test cases.
+    
+    ```bash
+      mkdir tests
+      touch tests/conftest.py tests/test_config.py tests/__init__.py
+    ```
+3. Run Test cases as:
+
+    ```bash
+    pytest -v
+    ```
+
+## EDA on dataset
+
+1. I have written `notebooks/EDA.ipynb` to perform EDA on the dataset and generated `schema_in.json` . This schema contains the min and max value of all the column, which will help us defining the range of the column.
+
+## Add Web Structure 
+1. I have created `prediction_service/` folder
+2. I have created `webapp/` folder to design a simple webpage using flask.
+3. I have written endpoint entry for webpage in `app.py` .
+4. Enter the values in the range shown in the form otherwise 404 status code is generated.
+5. I am not emphasizing on web development. Only added 1 webpage.
+
+## Creating CI-CD pipeline for github action.
+
+1. Create an action workflow for github at `.github/workflows/ci-cd.yaml`
+2. I have written all the steps in the yaml file for ci-cd
+3. push this file on the github
+4. Open Action tab in github repo, some action is getting performed automatically . That is continous integration of the code.
+
+## Deploy this workflow on Heroku or other server.
+1. I have deployed it on heroku. Due to monatery charges i have deleted the project from Heroku
