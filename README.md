@@ -9,11 +9,11 @@ You can use the below steps in order to replicate the pipeline at your end.
 **For linux :**
   - use the command on the terminal:
     
-    `mkvirtualenv george_classifier`
+    `mkvirtualenv mlops`
 
   - write the command to get in the virtual env:
     
-    `workon george_classifier`
+    `workon mlops`
 
   **For Windows :**
   - Follow through the link below:
@@ -24,5 +24,31 @@ You can use the below steps in order to replicate the pipeline at your end.
 ## Create a template of the project.
 
 Insted of making a project directory manually. use `template.py`
+`python3 template.py`
 
+## Perform the below steps in order to version control the data and code.
+1. Download the dataset from the folder: `data_given/` or from kaggle.
+2. Make directory  `mkdir data_given` and paste the dataset inside it.
+3. Initialize the git repo 
+`git init`
 
+4. Initialize DVC:
+`dvc init `
+
+5. Add the data for tracking using dvc
+`dvc add data_given/winequality.csv`
+
+you will find the 1 more file after this step whose extension is .dvc (winequality.csv.dvc)
+
+6. Add the code for tracking using git
+`git add .`
+
+`git commit -m "first commit"`
+
+7. Make a README.md file (you can download from this repo)
+
+  oneliner updates for readme
+
+  `git add . && git commit -m "update Readme.md"`
+
+8. 
