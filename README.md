@@ -75,3 +75,18 @@ Perform below steps:
    run: `dvc repro`
   
    push the changes to the github repo.
+
+6. I have written `src/train_and_evaluate.py` for model prediction and estimation.
+   To pass parametetrs to the model, all the parameters are added in `params.yaml` and all the pipeline parameters are added in `dvc.yaml`
+
+   run: `dvc repro`
+   push the changes to the github repo.
+
+7. The prediction values and scores are stored in the `report/` folder. 
+8. just change the value of parameters for estimators in `params.yaml`. 
+   
+   and run : `dvc repro`.
+   
+   run: `dvc metrics show` . It will give scores and param mapping
+   
+   run: `dvc metrics diff` . It will give difference of previous and current result
