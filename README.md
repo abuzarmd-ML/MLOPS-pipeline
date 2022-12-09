@@ -125,9 +125,45 @@ Perform below steps:
 ## Creating CI-CD pipeline for github action.
 
 1. Create an action workflow for github at `.github/workflows/ci-cd.yaml`
-2. I have written all the steps in the yaml file for ci-cd
+2. I have written all the steps in the yaml file for continouous integration
 3. push this file on the github
 4. Open Action tab in github repo, some action is getting performed automatically . That is continous integration of the code.
+## Load webpage
+
+1. To run the webpage just execute: `python app.py`
+2. In the console, there is a URL, copy and paste on the browser or Postman. you will get the webpage, where a page with form fill up will open
+3. Enter the range of values suggested in the form, you will get the predicted output.
+4. If any value is out of range, you will get the 404 error.
+
+   Note: I have not created webpages in fancy manner. But, it will work.
 
 ## Deploy this workflow on Heroku or other server.
 1. I have deployed it on heroku. Due to monatery charges i have deleted the project from Heroku
+
+## MLFLOW
+1. checkout a seperate branch for mlflow operations
+  ```bash 
+  git checkout -b mlflow
+  ```
+2. I have changed the `dvc.yaml` , `params.yaml` file
+
+3. According to MLFLOW, I am changing `train_and_evaluate.py`
+4. creating a folder `artifacts/` to save models and other artifacts.
+5. Run below mlflow server command -
+  ```bash
+  mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0 -p 1234
+  ```
+
+6. On the web browser hit the url(in my case)- http://0.0.0.0:1234
+7. On the browser you will get MLFLOW dashboard.
+8. Initially, Dashboard is empty. As soon as you will run `dvc repro` on your terminal, Browser gets updated and you can see experiments on dashboard.
+9. Do more experiments by changing parameters value in `params.yaml` .
+10. run : `dvc repro`. 
+11. as many number of time you will do the experiments, MLFLOW dashboard will be updated and all the reports will be logged on the dashboard.
+12. In `artifacts/` folder also experiments are logged.
+13. On the dashboard, you can do all the analysis of your model.
+14. select whatever model you want to select according to the accuracy logged and click on artifacts->model and click `ElasticnetWineModel` (in our case).
+15. click on `stage` dropdown, you will get options to deploy on production. 
+16. Now, make ci-cd pipeline for this braanch also. 
+17. push the changes to github
+18. you can see all the action are performed in github succesfully.
