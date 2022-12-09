@@ -79,7 +79,7 @@ def train_and_evaluate(config_path):
         else:
             mlflow.sklearn.load_model(lr, "model")
  
-###########################################################
+
 
 if __name__=="__main__":
     args = argparse.ArgumentParser()
